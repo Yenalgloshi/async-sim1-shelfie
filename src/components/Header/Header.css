@@ -1,0 +1,20 @@
+.Header {
+    background-color: #AB2A19;
+    height: 120px;
+    width: 100%;
+}
+
+.Header-element-1, .Header-element-2 {
+    display: inline-block;
+}
+
+.Header-element-1{
+    margin-left: 25%;
+    padding: 28px 30px 10px 0px;
+}
+
+.Header-element-2{
+    color: white;
+    font-size: 3.0em;
+    font-weight: bold;
+}
