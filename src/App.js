@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
-import Dashboard from './components/Dashboard/Dashboard';
+import ShelfList from './components/ShelfList/ShelfList';
 import Product from './components/Product/Product';
 import Form from './components/Form/Form';
 
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Dashboard />
+        <ShelfList />
         <Product />
         <Form />
       </div>

@@ -4,17 +4,20 @@
     width: 100%;
 }
 
-.Header-element-1, .Header-element-2 {
-    display: inline-block;
+.hdr-wrapper{
+    margin-top: 0px;
+    padding: 24px;
 }
 
-.Header-element-1{
+.hdr-logo{
     margin-left: 25%;
     padding: 28px 30px 10px 0px;
+    display: inline;
 }
 
-.Header-element-2{
+.hdr-element-2{
     color: white;
     font-size: 3.0em;
     font-weight: bold;
+    display: inline;
 }
