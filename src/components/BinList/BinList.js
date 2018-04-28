@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import './Form.css';
+import './BinList.css';
 
-class Form extends Component{
+class BinList extends Component{
     render(){
         return(
             <div>
-                Form
+                BinList
             </div>
         )
     }
 }
 
-export default Form;
+export default BinList;

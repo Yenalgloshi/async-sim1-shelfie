@@ -1,17 +1,23 @@
-.Header {
-    background-color: #AB2A19;
-    height: 120px;
-    width: 100%;
-}
+/* .Header {
+} */
 
 .hdr-wrapper{
+    background-color: #AB2A19;
+    height: 50px;
+    width: 100%;
     margin-top: 0px;
     padding: 24px;
+    /* justify-content: center; */
+    align-items: center;
+    /* align-content: center; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .hdr-logo{
     margin-left: 25%;
-    padding: 28px 30px 10px 0px;
+    padding: 10px 30px 10px 0px;
     display: inline;
 }
 
