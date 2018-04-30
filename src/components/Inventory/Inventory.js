@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './Inventory.css';
 
-export default function Inventory (props){
-    return(
-        <div>
-            Inventory
-        </div>
-    )
+class Inventory extends Component{
+    render(){
+        return(
+            <div>
+                Inventory Details Page
+            </div>
+        )
+    }
 }
+
+export default Inventory;

@@ -1,0 +1,62 @@
+.hdr2-wrapper{
+    background-color: #AB2A19;
+    height: 50px;
+    width: 25%;
+    margin-top: 0px;
+    padding: 24px;
+    /* justify-content: center; */
+    align-items: center;
+    /* align-content: center; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.hdr-logo{
+    margin-left: 25%;
+    padding: 10px 30px 10px 0px;
+    display: inline;
+}
+
+.hdr2-nav{
+    background-color: #D34735;
+    color: white;
+    height: 50px;
+    width: 100%;
+    margin-left: 25%;
+    padding: 24px;
+    /* justify-content: center; */
+    align-items: center;
+    /* align-content: center; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-top: 5px;
+    font-size: 3.0em;
+    font-weight: bold;
+}
+
+.bin-btn{
+    text-align: left;
+    background-color: #ED6B5A;
+    color: white;
+    width: 60%;
+    height: 70px;
+    margin: 20px;
+    border: none;
+    padding-left: 150px;
+    display: block;
+    font-size: 3.0em;
+    font-weight: bold;
+    border-radius: 7px;
+    opacity: 1;
+}
+
+a {text-decoration: none};
+
+.sl-btn:hover {opacity:0.8};
+
+#addInv-btn{
+    text-align: left;
+    background-color: #FFB8AF;
+}

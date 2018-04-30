@@ -7,10 +7,10 @@ const app = express();
 app.use(bodyParser.json());
 
 
-app.get('/api/shelf/:id', ctrl.getAll)
-app.post('/api/bin/:id', ctrl.createBin)
-app.put('/api/bin/:id', ctrl.updateBin)
-app.delete('/api/bin/:id', ctrl.deleteBin)
+app.get('/api/binList/:id', ctrl.readBin)
+app.post('/api/binList/:id', ctrl.createBin)
+app.put('/api/binList/:id', ctrl.updateBin)
+app.delete('/api/binList/:id', ctrl.deleteBin)
 
 const port = 3210;
-app.listen(port, () => console.log(`The NSA is listening on port ${port}`));
+app.listen(port, () => {console.log(`The NSA is listening on port ${port}`)});

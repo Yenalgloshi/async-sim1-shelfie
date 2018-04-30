@@ -2,8 +2,8 @@ let stuff = [];
 let id = 0;
 
 module.exports = {
-    getAll: (req, res) => {
-        res.status(200).send("All is A-OK!")
+    readBin: (req, res) => {
+        res.status(200).send("Things are good!")
     },
     
     createBin: (req, res) => {
