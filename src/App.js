@@ -15,13 +15,6 @@ class App extends Component {
  
     return (
       <div className="App">
-        <nav>
-            <ul>
-              <Link to='/'>Home</Link>
-              <Link to='/BinList'>BinList</Link>
-              <Link to='/Inventory'>Inventory</Link>
-            </ul>
-        </nav>
         {router}
       </div>
     );

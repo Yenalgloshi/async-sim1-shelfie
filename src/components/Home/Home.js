@@ -1,15 +1,14 @@
 import React from 'react';
 import './Home.css';
+import {Link} from 'react-router-dom';
 import Header from '../Header/Header';
 
 let shelves = ["Shelf A", "Shelf B", "Shelf C", "Shelf D"]
 let shelfDisplay = shelves.map((e,i) => {
-    return(      
-        <button 
-          key={i} 
-          className="sl-btn">
-          {e}
-        </button>      
+    return(
+        <Link to={`/BinList/${i}`} key={i}>   
+            <button key={i} className="sl-btn"> {e} </button>
+        </Link>
     )
   })
 

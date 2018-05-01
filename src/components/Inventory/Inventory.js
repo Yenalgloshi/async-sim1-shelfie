@@ -6,6 +6,7 @@ class Inventory extends Component{
         return(
             <div>
                 Inventory Details Page
+                <p>This is id: {this.props.match.params.id}</p>
             </div>
         )
     }

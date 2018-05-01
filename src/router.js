@@ -9,6 +9,6 @@ export default (
   <Switch>
     <Route exact path='/' component={ Home } />
     <Route path='/BinList' component={ BinList } />
-    <Route path='/Inventory' component={ Inventory } />
+    <Route path='/Inventory/:id' component={ Inventory } />
   </Switch>
 )

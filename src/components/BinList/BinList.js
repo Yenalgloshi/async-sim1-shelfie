@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import './BinList.css';
 
 class BinList extends Component {
@@ -6,26 +7,18 @@ class BinList extends Component {
       super()
   
       this.state = {
-            listOfBins:[
-                "Bin 1", 
-                "Bin 2", 
-                "Bin 3", 
-                "Bin 4"
-            ]
+            listOfBins:["Bin 1", "Bin 2", "Bin 3", "Bin 4"]
         }   
     }
-
- 
     
     render() {
         let binsList = this.state.listOfBins.map((e,i) => {
-        return(      
-            <button 
-              key={i} 
-              className="bin-btn">
-              {e}
-            </button>      
-        )})
+        return(
+            <Link to={`/Inventory/${i}`} key={i}>   
+                <button key={i} className="bin-btn"> {e} </button>
+            </Link>    
+        )
+    })
         
       return (
         <div className="App">
@@ -34,14 +27,17 @@ class BinList extends Component {
                     <img src={require('../Header/logo.png')} alt="shelfie-logo" />   
                 </div>    
                 <div className="hdr2-nav"> 
-                    Shelf A
+                    <Link to='/'>
+                        Shelf A
+                    </Link>
                 </div>
             </div>
             
-            <div className='hdr-2'>
+            <div className='bin-btn-wpr'>
                 {binsList}
-                <button id="addInv-btn">+ Add Inventory</button>
+                <button>+ Add Inventory</button>
             </div>
+
             
           
         </div>
