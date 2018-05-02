@@ -37,9 +37,9 @@ class Inventory extends Component{
                         <Link to={`/BinList/${this.props.match.params.shelf}`}>
                             Shelf {this.props.match.params.shelf}
                         </Link>
-                        <div className="hdr3-bin-nav">
-                            Bin {this.props.match.params.id}
-                        </div>
+                    </div>
+                    <div className="hdr3-bin-nav">
+                        Bin {this.props.match.params.id}
                     </div>
                 </div>
                 <div className="inv-details">

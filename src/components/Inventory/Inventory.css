@@ -2,7 +2,7 @@
     background-color: #AB2A19;
     height: 50px;
     margin-top: 0px;
-    padding: 24px;
+    padding: 24px 0px 24px 0px;
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -19,6 +19,7 @@
     background-color: #D34735;
     color: white;
     height: 99px;
+    width: 20%;
     margin-left: 40px;
     padding: 0px 0px 0px 20px;
     align-items: center;
@@ -33,12 +34,12 @@
     background-color: #ED6B5A;
     color: white;
     height: 98px;
-    margin-left: 100px;
+    width: 70%;
     padding: 0px 0px 0px 20px;
     align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    font-size: 1.0em;
+    font-size: 3.0em;
     font-weight: bold;
  }
