@@ -7,15 +7,15 @@ class BinList extends Component {
       super()
   
       this.state = {
-            listOfBins:["Bin 1", "Bin 2", "Bin 3", "Bin 4"]
+            listOfBins:["1", "2", "3", "4"]
         }   
     }
     
     render() {
         let binsList = this.state.listOfBins.map((e,i) => {
         return(
-            <Link to={`/Inventory/${i}`} key={i}>   
-                <button key={i} className="bin-btn"> {e} </button>
+            <Link to={`/Inventory/${e}/${this.props.match.params.shelf}`} key={i}>   
+                <button key={i} className="bin-btn"> Bin {e} </button>
             </Link>    
         )
     })
@@ -28,7 +28,7 @@ class BinList extends Component {
                 </div>    
                 <div className="hdr2-nav"> 
                     <Link to='/'>
-                        Shelf A
+                        Shelf {this.props.match.params.shelf}
                     </Link>
                 </div>
             </div>
@@ -37,9 +37,6 @@ class BinList extends Component {
                 {binsList}
                 <button>+ Add Inventory</button>
             </div>
-
-            
-          
         </div>
       );
     }

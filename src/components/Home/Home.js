@@ -3,11 +3,11 @@ import './Home.css';
 import {Link} from 'react-router-dom';
 import Header from '../Header/Header';
 
-let shelves = ["Shelf A", "Shelf B", "Shelf C", "Shelf D"]
+let shelves = ["A", "B", "C", "D"]
 let shelfDisplay = shelves.map((e,i) => {
     return(
-        <Link to={`/BinList/${i}`} key={i}>   
-            <button key={i} className="sl-btn"> {e} </button>
+        <Link to={`/BinList/${e}`} key={i}>   
+            <button key={i} className="sl-btn"> Shelf {e} </button>
         </Link>
     )
   })

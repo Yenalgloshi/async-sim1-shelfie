@@ -8,7 +8,7 @@ import Inventory from './components/Inventory/Inventory';
 export default (
   <Switch>
     <Route exact path='/' component={ Home } />
-    <Route path='/BinList' component={ BinList } />
-    <Route path='/Inventory/:id' component={ Inventory } />
+    <Route path='/BinList/:shelf' component={ BinList } />
+    <Route path='/Inventory/:id/:shelf' component={ Inventory } />
   </Switch>
 )

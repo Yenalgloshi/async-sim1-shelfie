@@ -1,0 +1,44 @@
+.hdr3-wrapper{
+    background-color: #AB2A19;
+    height: 50px;
+    margin-top: 0px;
+    padding: 24px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.hdr-logo{
+    margin-left: 4%;
+    padding: 10px 30px 10px 0px;
+    display: inline;
+}
+
+.hdr3-shlf-nav{
+    background-color: #D34735;
+    color: white;
+    height: 99px;
+    margin-left: 40px;
+    padding: 0px 0px 0px 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 3.0em;
+    font-weight: bold;
+ }
+
+ .hdr3-bin-nav{
+    background-color: #ED6B5A;
+    color: white;
+    height: 98px;
+    margin-left: 100px;
+    padding: 0px 0px 0px 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 1.0em;
+    font-weight: bold;
+ }

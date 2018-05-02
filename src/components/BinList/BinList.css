@@ -28,7 +28,7 @@
     flex-wrap: nowrap;
     font-size: 3.0em;
     font-weight: bold;
-}
+ }
 
 .bin-btn-wpr{
     background-color: white;
@@ -51,9 +51,11 @@
     opacity: 1;
 }
 
-a {text-decoration: none};
+a {text-decoration: none;}
 
-.sl-btn:hover {opacity:0.8};
+a:visited{color: white;}
+
+.sl-btn:hover {opacity:0.8;}
 
 .add-inv-btn{
     text-align: left;
