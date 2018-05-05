@@ -27,6 +27,7 @@ class Inventory extends Component{
 
         return(
             <div className="App">
+                
                 <div className="hdr3-wrapper">
                     <div className="hdr-logo">
                         <Link to={'/'}>
@@ -42,14 +43,23 @@ class Inventory extends Component{
                         Bin {this.props.match.params.id}
                     </div>
                 </div>
+
                 <div className="inv-details">
-                    <p>Name</p>
-                    <input onChange={ (e) => this.handleNameChange( e.target.value ) } type="text" />
-                    <p>Price</p>
-                    <input onChange={ (e) => this.handlePriceChange( e.target.value ) } type="text" />
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <div className="inv-img">
+                        {/* <img src="https://image.freepik.com/free-vector/angry-dragon-silhouette_23-2147510357.jpg" alt="dragon" className="img-1"/> */}
+                    </div>
+                    <div className="input-wpr">
+                        <h2 className="input-label">Name</h2>
+                        <input onChange={ (e) => this.handleNameChange( e.target.value ) } type="text" className="input-box"/>
+                        <h2 className="input-label">Price</h2>
+                        <input onChange={ (e) => this.handlePriceChange( e.target.value ) } type="text" className="input-box"/>
+                    </div>
+                    <div className="inv-btn-wpr">
+                        <button className="inv-btn">Edit</button>
+                        <button className="inv-btn">Delete</button>
+                    </div>
                 </div>
+            
             </div>
         )
     }
