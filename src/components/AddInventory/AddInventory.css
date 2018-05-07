@@ -1,4 +1,4 @@
-.hdr3-wrapper{
+.hdr4-wrapper{
     background-color: #AB2A19;
     height: 50px;
     margin-top: 0px;
@@ -15,7 +15,7 @@
     display: inline;
 }
 
-.hdr3-shlf-nav{
+.hdr4-shlf-nav{
     background-color: #D34735;
     color: white;
     height: 99px;
@@ -30,9 +30,9 @@
     font-weight: bold;
  }
 
- .hdr3-bin-nav{
+ .hdr4-bin-nav{
     background-color: #ED6B5A;
-    color: white;
+    color: black;
     height: 98px;
     width: 70%;
     padding: 0px 0px 0px 20px;
@@ -44,34 +44,19 @@
     font-weight: bold;
  }
 
-/* .inv-img {
-    max-width: 25%;
-    max-height: 7%;
-} */
-
-.img-1 {
-    width: 10%;
-    max-width: 25%;
-    max-height: 7%;
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap; */
-    display: inline;
-}
-
-.input-wpr {
+.addInput-wpr {
     margin-left: 34%;
     font-weight: bold;
 
 }
 
-.input-label {
+.addInput-label {
     align-items: center;
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
-.input-box {
+.addInput-box {
     border-radius: 7px;
     width: 75%;
     height: 90px;
@@ -81,33 +66,16 @@
     padding: 0px 20px;
 }
 
-.inv-btn-wpr {
+.addInv-btn-wpr {
     margin-left: 26%;
     margin-top: 10px;
 }
 
-.inv-btn {
-    text-align: center;
-    background-color: #D8D8D8;
-    color: black;
-    width: 24%;
-    height: 100px;
-    margin: 50px 11%;
-    border: none;
-    font-size: 3.0em;
-    font-weight: bold;
-    border-radius: 7px;
-    opacity: 1;
-    outline: 0;
-}
-
-.inv-btn:hover {opacity:0.7;}
-
-.inv-save-btn {
+.addInv-btn {
     text-align: center;
     background-color: #40F99B;
     color: black;
-    width: 24%;
+    width: 70%;
     height: 100px;
     margin: 50px 11%;
     border: none;
@@ -117,6 +85,6 @@
     opacity: 1;
     text-decoration: none;
     outline: 0;
-}    
+}
 
-.inv-save-btn:hover {opacity:0.7;}
+.addInv-btn:hover {opacity:0.7;}

@@ -20,7 +20,9 @@ class BinList extends Component {
             if(e === null){
                 return(
                     <div className="add-inv-btn-wpr">
-                        <button key={i} className="add-inv-btn" >+ Add Inventory</button>
+                        <Link to={`/AddInventory/${i+1}/${this.props.match.params.shelf}`} key={i}>      
+                            <button key={i} className="add-inv-btn"> + Add Inventory </button>
+                        </Link>
                     </div>
                 )
             }

@@ -1,16 +1,16 @@
--- drop table if exists users;
+drop table if exists shelfieInv;
 
--- create table users (
---     id serial primary key,
---     name text,
---     email text,
---     phone bigInt
--- );
+create table shelfieInv (
+    id serial primary key,
+    name text,
+    price decimal,
+    image text
+);
 
--- insert into users
--- (name, email, phone)
--- values
--- ('Me', 'me@mail.com', 1234567890),
--- ('You', 'you@mail.com', 9876543210),
--- ('Harry', 'harry@mail.com', 1122334455),
--- ('Jane', 'jane@mail.com', 9988776655)
+insert into shelfieInv
+(id, name, price, image)
+values
+('', '', '', ''),
+('', '', '', ''),
+('', '', '', ''),
+('', '', '', '')
