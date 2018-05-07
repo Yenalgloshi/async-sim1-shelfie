@@ -7,7 +7,7 @@ class BinList extends Component {
       super()
   
       this.state = {
-            A:[null, "2", null, "4", "5"],
+            A:[null, "2", null, "4", null],
             B:["1", null, "3", "4", "5"],
             C:["1", "2", null, "4", "5"],
             D:["1", "2", "3", null, "5"]
