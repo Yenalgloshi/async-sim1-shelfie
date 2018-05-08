@@ -18,7 +18,7 @@
 .hdr3-shlf-nav{
     background-color: #D34735;
     color: white;
-    height: 99px;
+    height: 98px;
     width: 20%;
     margin-left: 40px;
     padding: 0px 0px 0px 20px;
@@ -44,25 +44,24 @@
     font-weight: bold;
  }
 
-/* .inv-img {
-    max-width: 25%;
-    max-height: 7%;
-} */
-
-.img-1 {
-    width: 10%;
-    max-width: 25%;
-    max-height: 7%;
-    /* display: flex;
+.input-wpr {
+    display: flex;
     flex-direction: row;
-    flex-wrap: nowrap; */
-    display: inline;
+    position: absolute;
+    max-height: 60%;
+    margin-left: 5%;
 }
 
-.input-wpr {
-    margin-left: 34%;
-    font-weight: bold;
+.bin-img {
+    width: 350px;
+    height: auto;
+    margin: 30px 70px;
+}
 
+.input-fields {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 30px;
 }
 
 .input-label {
@@ -71,26 +70,39 @@
     margin-top: 20px;
 }
 
-.input-box {
+.input-name-box {
     border-radius: 7px;
-    width: 75%;
     height: 90px;
     border: 1px solid #ED6B5A;
     font-size: 3.0em;
     font-weight: bolder;
-    padding: 0px 20px;
+    padding: 0px 30px;
+}
+
+.input-price-box {
+    border-radius: 7px;
+    height: 90px;
+    border: 1px solid #ED6B5A;
+    font-size: 3.0em;
+    font-weight: bolder;
+    padding: 0px 30px;
 }
 
 .inv-btn-wpr {
-    margin-left: 26%;
-    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content: space-between;
+    top: 67%;
+    left: 35%;
+    width: 63%;
 }
 
-.inv-btn {
+.inv-edit-btn {
     text-align: center;
     background-color: #D8D8D8;
     color: black;
-    width: 24%;
+    width: 275px;
     height: 100px;
     margin: 50px 11%;
     border: none;
@@ -103,11 +115,45 @@
 
 .inv-btn:hover {opacity:0.7;}
 
+.inv-del-btn {
+    text-align: center;
+    background-color: #D8D8D8;
+    color: black;
+    width:275px;
+    height: 100px;
+    margin: 50px 0;
+    border: none;
+    font-size: 3.0em;
+    font-weight: bold;
+    border-radius: 7px;
+    opacity: 1;
+    outline: 0;
+}
+
+.inv-del-btn:hover {opacity:0.7;}
+
+.inv-cncl-btn {
+    text-align: center;
+    background-color: #D8D8D8;
+    color: black;
+    width: 275px;
+    height: 100px;
+    margin: 50px 0;
+    border: none;
+    font-size: 3.0em;
+    font-weight: bold;
+    border-radius: 7px;
+    opacity: 1;
+    outline: 0;
+}
+
+.inv-cncl-btn:hover {opacity:0.7;}
+
 .inv-save-btn {
     text-align: center;
     background-color: #40F99B;
     color: black;
-    width: 24%;
+    width: 275px;
     height: 100px;
     margin: 50px 11%;
     border: none;

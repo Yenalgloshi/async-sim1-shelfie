@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
 const massive = require('massive');
 require('dotenv').config()
 
@@ -16,9 +15,8 @@ massive(process.env.CONNECTION_STRING).then(dbInstance =>{
 }).catch(err => console.log(err))
 
 app.use(bodyParser.json());
-app.use(cors());
 
-app.get('/api/binList/:id', ctrl.readBin)
+app.get('/api/product/:shelf/:bin', ctrl.readBin)
 app.post('/api/binList/:id', ctrl.createBin)
 app.put('/api/binList/:id', ctrl.updateBin)
 app.delete('/api/binList/:id', ctrl.deleteBin)

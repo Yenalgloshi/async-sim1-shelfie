@@ -7,7 +7,7 @@ let shelves = ["A", "B", "C", "D"]
 let shelfDisplay = shelves.map((e,i) => {
     return(
         <Link to={`/BinList/${e}`} key={i}>   
-            <button key={i} className="sl-btn"> Shelf {e} </button>
+            <button key={i} className="shlf-btn"> Shelf {e} </button>
         </Link>
     )
   })
@@ -16,7 +16,7 @@ let shelfDisplay = shelves.map((e,i) => {
     return (
         <div className="App">
             <Header />
-            <div className='sl-1'>
+            <div className='shlf-list'>
                 {shelfDisplay}
             </div>
             

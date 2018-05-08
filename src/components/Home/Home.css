@@ -1,9 +1,9 @@
-.sl-1{
+.shlf-list{
     /* background-color: white; */
     margin-left: calc(100% - 75%);
     margin-top: 10px;
 }
-.sl-btn{
+.shlf-btn{
     text-align: left;
     background-color: #D34735;
     color: white;
@@ -21,4 +21,4 @@
 
 a {text-decoration: none;}
 
-.sl-btn:hover {opacity:0.8;}
+.shlf-btn:hover {opacity:0.8;}

@@ -8,7 +8,7 @@ class AddInventory extends Component{
 
         this.state = {
             name:"",
-            price:""
+            price:0
         }
         this.handleAddInvClick = this.handleAddInvClick.bind(this);
     }
@@ -55,7 +55,7 @@ class AddInventory extends Component{
                                disabled={this.state.disabled}/>
                         <h2 className="addInput-label">Price</h2>
                         <input onChange={ (e) => this.handleAddPriceChange( e.target.value ) } 
-                               type="decimal" 
+                               type="number" 
                                className="addInput-box"
                                disabled={this.state.disabled}/>
                     </div>

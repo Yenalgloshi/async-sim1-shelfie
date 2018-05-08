@@ -4,7 +4,8 @@ let id = 0;
 module.exports = {
     readBin: (req, res) => {
         const dbInstance = req.app.get('db');
-        res.status(200).send("Things are good!")
+        dbInstance.read_bin(req.params.shelf, req.params.bin)
+            .then(bin => res.status(200).send(bin));
     },
     
     createBin: (req, res) => {

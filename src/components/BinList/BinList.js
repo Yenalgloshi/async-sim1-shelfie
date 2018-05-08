@@ -28,9 +28,9 @@ class BinList extends Component {
             }
             else{
                 return(
-                <Link to={`/Inventory/${i+1}/${this.props.match.params.shelf}`} key={i}>      
-                    <button key={i} className="bin-btn"> Bin {i+1} </button>
-                </Link>  
+                    <Link to={`/Inventory/${i+1}/${this.props.match.params.shelf}`} key={i}>      
+                        <button key={i} className="bin-btn"> Bin {i+1} </button>
+                    </Link>  
                 )  
 
             }
