@@ -17,9 +17,9 @@ massive(process.env.CONNECTION_STRING).then(dbInstance =>{
 app.use(bodyParser.json());
 
 app.get('/api/product/:shelf/:bin', ctrl.readBin)
-app.post('/api/binList/:id', ctrl.createBin)
-app.put('/api/binList/:id', ctrl.updateBin)
-app.delete('/api/binList/:id', ctrl.deleteBin)
+app.post('/api/product/:shelf/:bin', ctrl.createBin)
+app.put('/api/product/:id', ctrl.updateBin)
+app.delete('/api/product/:id', ctrl.deleteBin)
 
 const port = 3210;
 app.listen(port, () => {console.log(`The NSA is listening on port ${port}`)});

@@ -58,7 +58,7 @@
 
 .addInput-box {
     border-radius: 7px;
-    width: 75%;
+    width: 50%;
     height: 90px;
     border: 1px solid #ED6B5A;
     font-size: 3.0em;
@@ -75,7 +75,7 @@
     text-align: center;
     background-color: #40F99B;
     color: black;
-    width: 70%;
+    width: 47%;
     height: 100px;
     margin: 50px 11%;
     border: none;

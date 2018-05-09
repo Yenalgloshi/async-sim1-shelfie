@@ -20,7 +20,7 @@ class BinList extends Component {
             if(e === null){
                 return(
                     <div className="add-inv-btn-wpr">
-                        <Link to={`/AddInventory/${i+1}/${this.props.match.params.shelf}`} key={i}>      
+                        <Link to={`/AddInventory/${this.props.match.params.shelf}/${i+1}`} key={i}>      
                             <button key={i} className="add-inv-btn"> + Add Inventory </button>
                         </Link>
                     </div>
@@ -28,7 +28,7 @@ class BinList extends Component {
             }
             else{
                 return(
-                    <Link to={`/Inventory/${i+1}/${this.props.match.params.shelf}`} key={i}>      
+                    <Link to={`/Inventory/${this.props.match.params.shelf}/${i+1}`} key={i}>      
                         <button key={i} className="bin-btn"> Bin {i+1} </button>
                     </Link>  
                 )  

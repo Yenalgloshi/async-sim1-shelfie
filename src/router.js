@@ -11,7 +11,7 @@ export default (
   <Switch>
     <Route exact path='/' component={ Home } />
     <Route path='/BinList/:shelf' component={ BinList } />
-    <Route path='/Inventory/:id/:shelf' component={ Inventory } />
-    <Route path='/AddInventory/:id/:shelf' component={ AddInventory } />
+    <Route path='/Inventory/:shelf/:id' component={ Inventory } />
+    <Route path='/AddInventory/:shelf/:id' component={ AddInventory } />
   </Switch>
 )
