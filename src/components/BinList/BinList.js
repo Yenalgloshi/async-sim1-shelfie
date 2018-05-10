@@ -15,7 +15,7 @@ class BinList extends Component {
 
     componentDidMount() {
         axios.get(`/api/bins/${this.props.match.params.shelf}`).then( response => {
-            console.log(response.data)                             // response.data an array of objects
+            // console.log(response.data)                             // response.data an array of objects
             let bins = response.data.map((obj) => obj.bin)         // map over response.data and put bin numbers in a new array
             let newBinArray = Array(5).fill(null).map((e, i) => {  // create array w/ only 5 elements and fill each with null then map over
                 if(bins.includes(i+1)){                            // checks to see if an element has a number

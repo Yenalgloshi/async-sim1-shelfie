@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './Inventory.css';
 
+import axios from 'axios';
+
 class Inventory extends Component{
     constructor(){
         super()
@@ -9,11 +11,22 @@ class Inventory extends Component{
         this.state = {
             name:"",
             price: 0,
-            image:"",
+            image: "",
             disabled: true
         }
         this.handleEditClick = this.handleEditClick.bind(this);
         this.handleSaveClick = this.handleSaveClick.bind(this);
+    }
+    
+    componentDidMount() {
+        // axios (GET)
+        // setState with response -> binInfoToDisplay
+        let promise = axios.get(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.id}`)
+        promise.then( res => {
+            this.setState({ name: res.data[0].name, 
+                            price: res.data[0].price, 
+                            image: res.data[0].image })
+        })
     }
 
     handleNameChange(val){
@@ -29,7 +42,15 @@ class Inventory extends Component{
     }
 
     handleSaveClick(){
-        this.setState({disabled: true})
+        let promise = axios.put(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.id}`,
+        {name: this.state.name, price: this.state.price})
+        promise.then( res => {
+            this.setState({ name: res.data[0].name, 
+                            price: res.data[0].price, 
+                            image: res.data[0].image, 
+                            disabled: true
+            })
+         })
     }
 
     render(){
@@ -53,20 +74,21 @@ class Inventory extends Component{
 
                 <div className="inv-details">
                     <div className="input-wpr">
-                        {/* <img src="https://i.pinimg.com/originals/72/29/93/7229938841528055776886f41f0583ee.jpg" alt="" className="bin-img"/> */}
-                        <img src="http://www.qygjxz.com/data/out/50/5582194-cool-wallpapers-for-iphone.png" alt="" className="bin-img"/>
+                        <img src={this.state.image} alt="" className="bin-img"/>
 
                         <div className="input-fields">
                             <h2 className="input-label">Name</h2>
                             <input onChange={ (e) => this.handleNameChange( e.target.value ) } 
                                 type="text" 
                                 className="input-name-box"
-                                disabled={this.state.disabled}/>
+                                disabled={this.state.disabled}
+                                value={this.state.name}/>
                             <h2 className="input-label">Price</h2>
                             <input onChange={ (e) => this.handlePriceChange( e.target.value ) } 
                                 type="number" 
                                 className="input-price-box"
-                                disabled={this.state.disabled}/>
+                                disabled={this.state.disabled}
+                                value={this.state.price}/>
                         </div>
 
                         { this.state.disabled === true ? 

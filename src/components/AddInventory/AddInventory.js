@@ -2,13 +2,18 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './AddInventory.css';
 
+import axios from 'axios';
+
 class AddInventory extends Component{
     constructor(){
         super()
 
         this.state = {
-            name:"",
-            price:0
+            shelf: "",
+            bin: 0,
+            name: "",
+            price: 0,
+            image: ""
         }
         this.handleAddInvClick = this.handleAddInvClick.bind(this);
     }
@@ -22,7 +27,23 @@ class AddInventory extends Component{
     }
 
     handleAddInvClick(){
-        this.setState({disabled: !this.state.disabled})
+        let promise = axios.post(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.id}`,
+        {   
+            shelf: this.props.match.params.shelf,
+            bin: this.props.match.params.id,
+            name: this.state.name, 
+            price: this.state.price
+        })
+        promise.then( res => {
+            this.setState({ 
+                shelf: res.data[0].shelf,
+                bin: res.data[0].bin,
+                name: res.data[0].name, 
+                price: res.data[0].price, 
+                image: res.data[0].image, 
+                disabled: !this.state.disabled
+            })
+         })
     }
 
    
@@ -52,12 +73,14 @@ class AddInventory extends Component{
                         <input onChange={ (e) => this.handleAddNameChange( e.target.value ) } 
                                type="text" 
                                className="addInput-box"
-                               disabled={this.state.disabled}/>
+                               disabled={this.state.disabled}
+                               value={this.state.name}/>
                         <h2 className="addInput-label">Price</h2>
                         <input onChange={ (e) => this.handleAddPriceChange( e.target.value ) } 
                                type="number" 
                                className="addInput-box"
-                               disabled={this.state.disabled}/>
+                               disabled={this.state.disabled}
+                               value={this.state.price}/>
                     </div>
                     
                     <div className="addInv-btn-wpr">
