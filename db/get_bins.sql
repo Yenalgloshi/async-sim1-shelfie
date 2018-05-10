@@ -1,0 +1,1 @@
+select bin from shelfieInv where shelf = $1;

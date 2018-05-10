@@ -2,21 +2,35 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './BinList.css';
 
+import axios from 'axios';
+
 class BinList extends Component {
     constructor(){
       super()
   
       this.state = {
-            A:[null, "2", null, "4", null],
-            B:["1", null, "3", "4", "5"],
-            C:["1", "2", null, "4", "5"],
-            D:["1", "2", "3", null, "5"]
+            shelfBins:[]
         }   
     }
-    
+
+    componentDidMount() {
+        axios.get(`/api/bins/${this.props.match.params.shelf}`).then( response => {
+            console.log(response.data)                             // response.data an array of objects
+            let bins = response.data.map((obj) => obj.bin)         // map over response.data and put bin numbers in a new array
+            let newBinArray = Array(5).fill(null).map((e, i) => {  // create array w/ only 5 elements and fill each with null then map over
+                if(bins.includes(i+1)){                            // checks to see if an element has a number
+                  return i+1                                       // returns the number
+                }
+                else{
+                  return null;                                     // else puts a null in the element index
+                }
+              })
+          this.setState({ shelfBins: newBinArray });               // puts the newBinArray on state
+        });
+      }
+
     render() {
-        let binsList = this.state[this.props.match.params.shelf].map((e,i) => {         // shelf is a variable so bracket notation was used 
-            console.log(e)
+        let binsList = this.state.shelfBins.map((e,i) => {         // shelf is a variable so bracket notation was used 
             if(e === null){
                 return(
                     <div className="add-inv-btn-wpr">
@@ -32,7 +46,6 @@ class BinList extends Component {
                         <button key={i} className="bin-btn"> Bin {i+1} </button>
                     </Link>  
                 )  
-
             }
     })
         
