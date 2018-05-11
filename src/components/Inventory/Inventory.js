@@ -16,6 +16,7 @@ class Inventory extends Component{
         }
         this.handleEditClick = this.handleEditClick.bind(this);
         this.handleSaveClick = this.handleSaveClick.bind(this);
+        this.handleDelClick = this.handleDelClick.bind(this);
     }
     
     componentDidMount() {
@@ -41,6 +42,16 @@ class Inventory extends Component{
         this.setState({disabled: !this.state.disabled})
     }
 
+    handleDelClick(){
+        let promise = axios.delete(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.id}`,
+        {shelf: this.props.match.params.shelf, bin: this.props.match.params.id})
+        promise.then( res => {
+            this.setState({name: res.data[0].name, 
+                           price: res.data[0].price, 
+                           image: res.data[0].image, })
+        })
+    }
+
     handleSaveClick(){
         let promise = axios.put(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.id}`,
         {name: this.state.name, price: this.state.price})
@@ -50,7 +61,8 @@ class Inventory extends Component{
                             image: res.data[0].image, 
                             disabled: true
             })
-         })
+         } )
+        //  this.props.history.push('/inventory/B')
     }
 
     render(){
@@ -94,7 +106,9 @@ class Inventory extends Component{
                         { this.state.disabled === true ? 
                             <div className="inv-btn-wpr">
                                 <button onClick={this.handleEditClick} className="inv-edit-btn">Edit</button> 
-                                <button onClick={this.handleSaveClick} className="inv-del-btn">Delete</button> 
+                                <Link to={`/BinList/${this.props.match.params.shelf}`}>
+                                    <button onClick={this.handleDelClick} className="inv-del-btn">Delete</button> 
+                                </Link>
                             </div>
                             :
                             <div className="inv-btn-wpr">
