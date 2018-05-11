@@ -20,8 +20,6 @@ class Inventory extends Component{
     }
     
     componentDidMount() {
-        // axios (GET)
-        // setState with response -> binInfoToDisplay
         let promise = axios.get(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.id}`)
         promise.then( res => {
             this.setState({ name: res.data[0].name, 
@@ -105,7 +103,7 @@ class Inventory extends Component{
                             </div>
                         </div>
 
-                        { this.state.disabled === true ? 
+                        { this.state.disabled === true ?   // escape JSX for ternary of cond. render of Edit & Delete btns or Save & Cancel btns
                             <div className="inv-btn-wpr">
                                 <button onClick={this.handleEditClick} className="inv-edit-btn">Edit</button> 
                                 <Link to={`/BinList/${this.props.match.params.shelf}`}>

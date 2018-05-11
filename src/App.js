@@ -4,14 +4,12 @@ import router from './router';
 
 
 class App extends Component {
-  constructor(){
-    super()
+  // constructor(){          // state not needed for this component
+  //   super()
 
-    this.state = {}   
-  }
+  //   this.state = {}   
+  // }
   render() {
-
- 
     return (
       <div className="App">
         {router}

@@ -18,8 +18,8 @@ class AddInventory extends Component{
         this.handleAddInvClick = this.handleAddInvClick.bind(this);
     }
 
-    handleAddNameChange(val){
-        this.setState({name: val})
+    handleAddNameChange(val){                               // e.target.value is given to the val argument
+        this.setState({name: val})                          //  then set to state
     }
 
     handleAddPriceChange(val){
@@ -27,9 +27,8 @@ class AddInventory extends Component{
     }
 
     handleAddInvClick(){
-        let promise = axios.post(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.id}`,
-        {   
-            shelf: this.props.match.params.shelf,
+        let promise = axios.post(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.id}`,  // the URL can be looked at as the "address" of a letter
+        {   shelf: this.props.match.params.shelf,                                                                // object to be attached as the contents of the letter
             bin: this.props.match.params.id,
             name: this.state.name, 
             price: this.state.price
@@ -70,7 +69,7 @@ class AddInventory extends Component{
                 <div className="addInv-details">
                     <div className="addInput-wpr">
                         <h2 className="addInput-label">Name</h2>
-                        <input onChange={ (e) => this.handleAddNameChange( e.target.value ) } 
+                        <input onChange={ (e) => this.handleAddNameChange( e.target.value ) } // each event (e) invokes the method
                                type="text" 
                                className="addInvName-box"
                                disabled={this.state.disabled}

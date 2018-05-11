@@ -29,9 +29,8 @@ class BinList extends Component {
         });
       }
 
-    render() {
-        let binsList = this.state.shelfBins.map((e,i) => {  
-            console.log(e+i)       // shelf is a variable so bracket notation was used 
+    render() {                                                     // this maps over the array on state and creates the bin list
+        let binsList = this.state.shelfBins.map((e,i) => {         //   with Add Inv for null items in the array
             if(e === null){
                 return(
                     <div className="add-inv-btn-wpr" key={"empty"+i}>

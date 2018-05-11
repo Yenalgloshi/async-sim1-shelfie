@@ -12,7 +12,6 @@ class Header extends Component{
                     SHELFIE
                 </div>
             </div>
-            
         )
     }
 }
