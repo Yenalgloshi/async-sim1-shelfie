@@ -96,11 +96,13 @@ class Inventory extends Component{
                                 disabled={this.state.disabled}
                                 value={this.state.name}/>
                             <h2 className="input-label">Price</h2>
-                            <input onChange={ (e) => this.handlePriceChange( e.target.value ) } 
-                                type="number" 
+                            <div className="dollar-symbol">
+                                <input onChange={ (e) => this.handlePriceChange( e.target.value ) } 
+                                // type="number" 
                                 className="input-price-box"
                                 disabled={this.state.disabled}
                                 value={this.state.price}/>
+                            </div>
                         </div>
 
                         { this.state.disabled === true ? 

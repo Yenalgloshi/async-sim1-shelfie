@@ -56,7 +56,7 @@
     margin-top: 20px;
 }
 
-.addInput-box {
+.addInvName-box {
     border-radius: 7px;
     width: 50%;
     height: 90px;
@@ -64,6 +64,42 @@
     font-size: 3.0em;
     font-weight: bolder;
     padding: 0px 20px;
+    outline: none;
+}
+
+.addInvName-box[type=text]:focus {
+    border: 5px solid #D34735 ;
+}
+
+.addInvPrice-box {
+    border-radius: 7px;
+    width: 40%;
+    height: 90px;
+    border: 1px solid #ED6B5A;
+    font-size: 3.0em;
+    font-weight: bolder;
+    padding: 0px 65px;
+    outline: none;
+}
+
+.addInvPrice-box:focus {
+    border: 5px solid #D34735 ;
+}
+
+.dollar-sign {
+    position: relative;
+    background-color: #dedede;
+    display: inline;
+}
+
+.dollar-sign:before {
+    content: '$';
+    position: absolute;
+    top: -39px;
+    left: 19px;
+    z-index: 1;
+    font-size: 3.0em;
+    font-weight: bolder;
 }
 
 .addInv-btn-wpr {

@@ -77,6 +77,11 @@
     font-size: 3.0em;
     font-weight: bolder;
     padding: 0px 30px;
+    outline: none;
+}
+
+.input-name-box[type=text]:focus {
+    border: 5px solid #D34735 ;
 }
 
 .input-price-box {
@@ -85,7 +90,28 @@
     border: 1px solid #ED6B5A;
     font-size: 3.0em;
     font-weight: bolder;
-    padding: 0px 30px;
+    padding: 0px 50px;
+    outline: none;
+}
+
+.input-price-box:focus {
+    border: 5px solid #D34735 ;
+}
+
+.dollar-symbol {
+    position: relative;
+    background-color: #dedede;
+    display: inline;
+}
+
+.dollar-symbol:before {
+    content: '$';
+    position: absolute;
+    top: 19px;
+    left: 19px;
+    z-index: 1;
+    font-size: 3.0em;
+    font-weight: bolder;
 }
 
 .inv-btn-wpr {

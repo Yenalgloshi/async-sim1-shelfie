@@ -30,20 +30,21 @@ class BinList extends Component {
       }
 
     render() {
-        let binsList = this.state.shelfBins.map((e,i) => {         // shelf is a variable so bracket notation was used 
+        let binsList = this.state.shelfBins.map((e,i) => {  
+            console.log(e+i)       // shelf is a variable so bracket notation was used 
             if(e === null){
                 return(
-                    <div className="add-inv-btn-wpr">
-                        <Link to={`/AddInventory/${this.props.match.params.shelf}/${i+1}`} key={i}>      
-                            <button key={i} className="add-inv-btn"> + Add Inventory </button>
+                    <div className="add-inv-btn-wpr" key={"empty"+i}>
+                        <Link to={`/AddInventory/${this.props.match.params.shelf}/${i+1}`} >      
+                            <button className="add-inv-btn"> + Add Inventory </button>
                         </Link>
                     </div>
                 )
             }
             else{
                 return(
-                    <Link to={`/Inventory/${this.props.match.params.shelf}/${i+1}`} key={i}>      
-                        <button key={i} className="bin-btn"> Bin {i+1} </button>
+                    <Link to={`/Inventory/${this.props.match.params.shelf}/${i+1}`} key={"full"+i}>      
+                        <button className="bin-btn"> Bin {i+1} </button>
                     </Link>  
                 )  
             }

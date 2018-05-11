@@ -72,15 +72,16 @@ class AddInventory extends Component{
                         <h2 className="addInput-label">Name</h2>
                         <input onChange={ (e) => this.handleAddNameChange( e.target.value ) } 
                                type="text" 
-                               className="addInput-box"
+                               className="addInvName-box"
                                disabled={this.state.disabled}
                                value={this.state.name}/>
                         <h2 className="addInput-label">Price</h2>
-                        <input onChange={ (e) => this.handleAddPriceChange( e.target.value ) } 
-                               type="number" 
-                               className="addInput-box"
-                               disabled={this.state.disabled}
-                               value={this.state.price}/>
+                        <div className="dollar-sign">
+                            <input onChange={ (e) => this.handleAddPriceChange( e.target.value ) } 
+                                className="addInvPrice-box"
+                                disabled={this.state.disabled}
+                                value={this.state.price}/>
+                        </div>
                     </div>
                     
                     <div className="addInv-btn-wpr">
