@@ -18,8 +18,10 @@ class AddInventory extends Component{
         this.handleAddInvClick = this.handleAddInvClick.bind(this);
     }
 
-    handleAddNameChange(val){                               // e.target.value is given to the val argument
-        this.setState({name: val})                          //  then set to state
+    handleAddNameChange(val){                               
+        // e.target.value is given to the val argument
+        this.setState({name: val})                          
+        //  then set to state
     }
 
     handleAddPriceChange(val){
@@ -27,21 +29,29 @@ class AddInventory extends Component{
     }
 
     handleAddInvClick(){
-        let promise = axios.post(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.id}`,  // the URL can be looked at as the "address" of a letter
-        {   shelf: this.props.match.params.shelf,                                                                // object to be attached as the contents of the letter
+        // the URL can be looked at as the "address" of a letter
+        // object to be attached as the contents of the letter
+        let promise = axios.post(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.id}`,  
+        {   shelf: this.props.match.params.shelf,                                                                
             bin: this.props.match.params.id,
             name: this.state.name, 
             price: this.state.price
         })
         promise.then( res => {
-            this.setState({ 
-                shelf: res.data[0].shelf,
-                bin: res.data[0].bin,
-                name: res.data[0].name, 
-                price: res.data[0].price, 
-                image: res.data[0].image, 
-                disabled: !this.state.disabled
-            })
+            // This comment is for the commented out code below.
+            // Since the AddInventory gets routed back to the BinList,
+            //   all the res.data doesn't need to be saved on state.
+            //     WHY the hell would you save stuff to state if you're
+            //        not going to use it?!?!?!  Duh....
+            
+            // this.setState({                                    
+            //     shelf: res.data[0].shelf,        
+            //     bin: res.data[0].bin,             
+            // name: res.data[0].name,              
+            //     price: res.data[0].price, 
+            //     image: res.data[0].image, 
+            //     disabled: !this.state.disabled
+            // })
          })
     }
 
@@ -69,7 +79,8 @@ class AddInventory extends Component{
                 <div className="addInv-details">
                     <div className="addInput-wpr">
                         <h2 className="addInput-label">Name</h2>
-                        <input onChange={ (e) => this.handleAddNameChange( e.target.value ) } // each event (e) invokes the method
+                        <input onChange={ (e) => this.handleAddNameChange( e.target.value ) } 
+                        // each event (e) invokes the method
                                type="text" 
                                className="addInvName-box"
                                disabled={this.state.disabled}

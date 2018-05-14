@@ -14,23 +14,34 @@ class BinList extends Component {
     }
 
     componentDidMount() {
+        // The response.data of the axios request is an array of objects.
+        // If the shelf is not full, the resulting array will only have those
+        //   elements resulting in an array that has less than 5 items.
         axios.get(`/api/bins/${this.props.match.params.shelf}`).then( response => {
-            // console.log(response.data)                             // response.data an array of objects
-            let bins = response.data.map((obj) => obj.bin)         // map over response.data and put bin numbers in a new array
-            let newBinArray = Array(5).fill(null).map((e, i) => {  // create array w/ only 5 elements and fill each with null then map over
-                if(bins.includes(i+1)){                            // checks to see if an element has a number
-                  return i+1                                       // returns the number
+            // console.log(response.data)                             
+            // map over response.data and put bin numbers in a new array
+            let bins = response.data.map((obj) => obj.bin)         
+            // create a new array w/ 5 elements and fill each with null then map over
+            let newBinArray = Array(5).fill(null).map((e, i) => {  
+                // checks to see if an element has a number
+                if(bins.includes(i+1)){                          
+                // returns the number
+                  return i+1                                       
                 }
+                // else puts a null in the element index
                 else{
-                  return null;                                     // else puts a null in the element index
+                  return null;                                     
                 }
               })
-          this.setState({ shelfBins: newBinArray });               // puts the newBinArray on state
+            // puts the newBinArray on state
+          this.setState({ shelfBins: newBinArray });               
         });
       }
 
-    render() {                                                     // this maps over the array on state and creates the bin list
-        let binsList = this.state.shelfBins.map((e,i) => {         //   with Add Inv for null items in the array
+    render() {                                                     
+        // this maps over the array on state and creates the bin list
+        //   with Add Inv for null items in the array
+        let binsList = this.state.shelfBins.map((e,i) => {         
             if(e === null){
                 return(
                     <div className="add-inv-btn-wpr" key={"empty"+i}>

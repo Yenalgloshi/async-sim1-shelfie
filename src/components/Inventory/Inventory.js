@@ -41,12 +41,20 @@ class Inventory extends Component{
     }
 
     handleDelClick(){
-        let promise = axios.delete(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.id}`,
-        {shelf: this.props.match.params.shelf, bin: this.props.match.params.id})
+        let promise = axios.delete(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.id}`)
+        
+        // the second axios element in the commented out code below, 
+        //   is not needed for axios.delete (also on a axios.get request)
+        // ,{shelf: this.props.match.params.shelf, bin: this.props.match.params.id})        
         promise.then( res => {
-            this.setState({name: res.data[0].name, 
-                           price: res.data[0].price, 
-                           image: res.data[0].image, })
+            // Setting the deleted items on state
+            // is not necessary because it's being deleted,
+            //    so why the crap would this need to be saved on state if you're
+            //      deleting it anyway, dummy?!?!?!
+            
+            // this.setState({name: res.data[0].name,
+            //                price: res.data[0].price,
+            //                image: res.data[0].image, })
         })
     }
 
@@ -60,7 +68,6 @@ class Inventory extends Component{
                             disabled: true
             })
          } )
-        //  this.props.history.push('/inventory/B')
     }
 
     render(){
@@ -103,7 +110,9 @@ class Inventory extends Component{
                             </div>
                         </div>
 
-                        { this.state.disabled === true ?   // escape JSX for ternary of cond. render of Edit & Delete btns or Save & Cancel btns
+                        {/* code below is escaped from JSX with curlys for ternary of conditional 
+                            render of Edit & Delete buttons or Save & Cancel buttons */}
+                        { this.state.disabled === true ?   
                             <div className="inv-btn-wpr">
                                 <button onClick={this.handleEditClick} className="inv-edit-btn">Edit</button> 
                                 <Link to={`/BinList/${this.props.match.params.shelf}`}>
